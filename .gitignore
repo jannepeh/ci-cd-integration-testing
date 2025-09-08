@@ -72,8 +72,7 @@ typings/
 # Serverless directories
 .serverless
 
-db/create-db.sql
-.env
+/db/create-db.sql
 
 dist/
 docs/
