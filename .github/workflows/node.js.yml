@@ -26,8 +26,13 @@ jobs:
       - name: Setup MySQL
         run: |
           sudo systemctl start mysql
-          cp .env.sample .env
           mysql -u root -proot < db/create-db.sql
+      - name: Create .env file
+        run: |
+          echo "DB_HOST=localhost" >> .env
+          echo "DB_NAME=cicdtest" >> .env
+          echo "DB_USER=jannepeh" >> .env
+          echo "DB_PASSWORD=exel80jajop" >> .env
       - name: Use Node.js ${{ matrix.node-version }} in ${{env.NODE_ENV}} mode
         uses: actions/setup-node@v4
         with:
