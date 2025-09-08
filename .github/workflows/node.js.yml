@@ -33,6 +33,7 @@ jobs:
           echo "DB_NAME=cicdtest" >> .env
           echo "DB_USER=jannepeh" >> .env
           echo "DB_PASSWORD=exel80jajop" >> .env
+          echo "PORT=3000" >> .env
           cat .env
       - name: Use Node.js ${{ matrix.node-version }} in ${{env.NODE_ENV}} mode
         uses: actions/setup-node@v4
