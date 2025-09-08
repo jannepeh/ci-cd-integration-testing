@@ -44,3 +44,10 @@ jobs:
       - run: ls
       - run: npm run build --if-present
       - run: npm run test
+      - name: Autom Apidoc
+        run: npm run apidoc
+      - name: Upload Apidoc artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: apidoc-node-${{ matrix.node-version }}
+          path: docs/
